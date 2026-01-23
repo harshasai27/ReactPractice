@@ -1,9 +1,17 @@
-export default function TaskList({tasks}){
+import TaskItem from "./TaskItem";
+
+export default function TaskList({tasks, toggleTask, deleteTask, editTask}){
 
     return(
-        <ul>
+        <ul style={{paddingLeft:"0px", listStyle:"none",width:"40%"}}>
             {tasks.map((task) =>(
-                <li key={task.id} className="list-item">{task.text}</li>
+                <TaskItem
+                    key={task.id}
+                    task={task}
+                    toggleTask={toggleTask}
+                    deleteTask={deleteTask}
+                    editTask={editTask}
+                />
             ))}
         </ul>
     )

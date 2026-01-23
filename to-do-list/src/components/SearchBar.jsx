@@ -1,8 +1,7 @@
 export default function SearchBar ({search, setSearch}){
 
     return(
-        <div>
-            <div>
+            <div className="search-bar-container">
                 <input
                     className="search-bar"
                     type="text"
@@ -11,6 +10,5 @@ export default function SearchBar ({search, setSearch}){
                     onChange={(e)=> setSearch(e.target.value)}
                 />
             </div>
-        </div>
     )
 }
