@@ -10,9 +10,11 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   const addTask = () => {
+    const cleanText = task.trim();
+    if(!cleanText) return;
     const newTask = {
       id: Date.now(),
-      text: task,
+      text: cleanText,
       completed : false,
     };
 
