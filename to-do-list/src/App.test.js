@@ -1,14 +1,23 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import App from './App';
+import App from './App1';
+import { ThemeProvider } from './context/ThemeContext';
 
 test('renders learn react link', () => {
-  render(<App />);
+  render(
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
   expect(screen.getByText(/To Do List/i)).toBeInTheDocument();
 });
 
 // Adding a new task to the list
 test("add a new task to the list", () => {
-  render(<App />);
+  render(
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
   const input = screen.getByPlaceholderText("Enter a task");
   const addButton = screen.getByText("Add Task");
 
@@ -17,9 +26,13 @@ test("add a new task to the list", () => {
   expect(screen.getByText("Create New Test")).toBeInTheDocument();
 });
 
-// Markking a task complete when checkbox is clicked
+// Marking a task complete when checkbox is clicked
 test("Mark a task as completed when checkbox is checked", () =>{
-  render(<App />);
+  render(
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
   const input = screen.getByPlaceholderText("Enter a task");
   const addButton = screen.getByText("Add Task");
 
@@ -37,7 +50,11 @@ test("Mark a task as completed when checkbox is checked", () =>{
 
 //deleting task using delete button
 test("Delete a task from the list", () => {
-  render(<App />);
+  render(
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
   const input = screen.getByPlaceholderText("Enter a task");
   const addButton = screen.getByText("Add Task");
   
@@ -53,7 +70,11 @@ test("Delete a task from the list", () => {
 
 //Editing task using the edit button
 test("Edit a task in the list", () => {
-  render(<App />);
+  render(
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
   const input = screen.getByPlaceholderText("Enter a task");
   const addButton = screen.getByText("Add Task");
   
@@ -73,7 +94,11 @@ test("Edit a task in the list", () => {
 })
 
 test("filters tasks based on search input", () => {
-  render(<App />);
+  render(
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
 
   const input = screen.getByPlaceholderText("Enter a task");
   const button = screen.getByText("Add Task");
